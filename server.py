@@ -2,7 +2,7 @@
 from flask import Flask, request, send_from_directory
 import os
 
-app = Flask(__name__, static_folder='./dist')
+app = Flask(__name__, static_folder='./dist/static')
 
 @app.route('/')
 def root():
