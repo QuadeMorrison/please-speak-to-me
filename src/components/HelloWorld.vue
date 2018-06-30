@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    input(autofocus type='text' @keyup.enter.native="onSubmit"
+    input(autofocus type='text' @keyup.enter.native="onSubmit" v-model='text'
           placeholder='please speak with me')
     span
       | Icons made by&nbsp
@@ -16,12 +16,16 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      sentenceToGen: ''
+      text: ''
     }
   },
   methods: {
     onSubmit() {
-
+      this.$http.post('/voice', {
+        text: this.text
+      }).then((response) => {
+        console.log('Give me the data')
+      })
     }
   }
 }
