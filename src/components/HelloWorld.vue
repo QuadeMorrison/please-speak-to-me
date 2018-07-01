@@ -1,8 +1,8 @@
 <template lang="pug">
   div
-    input(autofocus type='text' @keyup.enter.native="onSubmit" v-model='text'
+    input(autofocus type='text' @keyup.enter="onSubmit" v-model='text'
           placeholder='please speak with me')
-    button(@onClick="onSubmit") Submit
+    button(@click="onSubmit") Submit
     span
       | Icons made by&nbsp
       a(href="http://www.freepik.com" title="Freepik") Freepik
