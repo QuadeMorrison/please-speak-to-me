@@ -2,6 +2,7 @@
   div
     input(autofocus type='text' @keyup.enter.native="onSubmit" v-model='text'
           placeholder='please speak with me')
+    button(@onClick="onSubmit") Submit
     span
       | Icons made by&nbsp
       a(href="http://www.freepik.com" title="Freepik") Freepik
@@ -21,6 +22,7 @@ export default {
   },
   methods: {
     onSubmit() {
+      console.log("Submitting!")
       this.$http.post('/voice', {
         text: this.text
       }).then((response) => {
