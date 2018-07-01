@@ -3,6 +3,7 @@
     input(autofocus type='text' @keyup.enter="onSubmit" v-model='text'
           placeholder='please speak with me')
     button(@click="onSubmit") Submit
+    audio(controls='true' :src="audio")
     span
       | Icons made by&nbsp
       a(href="http://www.freepik.com" title="Freepik") Freepik
@@ -17,7 +18,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      text: ''
+      text: '',
+      audio: ''
     }
   },
   methods: {
@@ -26,6 +28,7 @@ export default {
       this.$http.post('/voice', {
         text: this.text
       }).then((response) => {
+        this.audio = response
         console.log('Give me the data')
       })
     }
