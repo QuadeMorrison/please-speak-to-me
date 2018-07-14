@@ -4,6 +4,7 @@ from flask import Flask, request, send_from_directory
 from os import listdir, environ
 from os.path import isfile, join
 import os
+import time
 from pydub import AudioSegment
 import sys
 sys.path.append("../tacotron")
@@ -32,7 +33,7 @@ def detect_leading_silence(sound, silence_threshold=-50.0, chunk_size=10):
     return trim_ms
 
 @app.route("/voice", methods = ['POST'])
-def hello_world():
+def voice():
     if request.method == 'POST':
         req_json = request.get_json()
         if req_json['text'] is not None:
