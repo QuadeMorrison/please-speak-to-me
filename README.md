@@ -16,11 +16,14 @@ To try this out yourself go to [please-speak-to-me](http://please-speak-to-me.he
 [Speech Zone](http://www.speech.zone/)
 * A collection of master level courses explaining how to synthesize a voice
   using hidden markov models and neural networks.
+
 [Merlin](https://github.com/CSTR-Edinburgh/merlin)
 * An open source library that implements an algorithm to synthesize a voice.
   Maintained by the authors of Speech Zone
+
 [Idlak](https://github.com/idlak/idlak)
 * An alternative to Merlin
+
 [Tacotron implementation](https://github.com/coljamkop/tacotron)
 * A fork of an implementation of tacotron. The original can be found [here](https://github.com/Kyubyong/tacotron)
   This fork is maintained for the purposes of this front end.
